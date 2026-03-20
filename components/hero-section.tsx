@@ -79,9 +79,8 @@ export function HeroSection() {
               </Button>
               <Button
                 size="lg"
-                variant="outline"
                 onClick={() => scrollToSection("contacto")}
-                className="border-2 border-white text-white hover:bg-white hover:text-[var(--color-primary)] text-lg px-8 py-6"
+                className="bg-white hover:bg-neutral-100 text-[var(--color-neutral-900)] text-lg px-8 py-6 font-bold border-2 border-white"
               >
                 Contáctanos
               </Button>
