@@ -181,14 +181,14 @@ export function ContactSection() {
             {/* Map */}
             <Card className="overflow-hidden border-none shadow-lg h-80">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2412648750455!2d-73.98784368459395!3d40.74844097932847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3042.326051181353!2d-73.00300212453057!3d-40.31292078096111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96166a223fc5b313%3A0xadca52d070d89c84!2sLiceo%20Bicentenario%20Industrial%20Ingeniero%20Ricardo%20Fenner%20Ruedi!5e0!3m2!1ses!2scl!4v1762953521588!5m2!1ses!2scl"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Ubicación del Liceo"
+                title="Ubicación del Liceo Bicentenario Industrial Ingeniero Ricardo Fenner Ruedi"
               />
             </Card>
           </div>
