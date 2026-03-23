@@ -1,30 +1,37 @@
-# Página web educativa moderna
+# WebFenner
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+Sitio web educativo construido con Next.js.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/felipes-projects-c16a5082/v0-pagina-web-educativa-moderna)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/iFVPJsZl09y)
+## Ejecutar en local
 
-## Overview
+1. Instalar dependencias:
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+```bash
+pnpm install
+```
 
-## Deployment
+2. Iniciar modo desarrollo:
 
-Your project is live at:
+```bash
+pnpm dev
+```
 
-**[https://vercel.com/felipes-projects-c16a5082/v0-pagina-web-educativa-moderna](https://vercel.com/felipes-projects-c16a5082/v0-pagina-web-educativa-moderna)**
+3. Abrir en el navegador:
 
-## Build your app
+http://localhost:3000
 
-Continue building your app on:
+## Deploy en GitHub Pages
 
-**[https://v0.app/chat/iFVPJsZl09y](https://v0.app/chat/iFVPJsZl09y)**
+Este repositorio incluye un workflow en `.github/workflows/deploy-pages.yml`.
 
-## How It Works
+1. Haz push a `main`.
+2. GitHub Actions construye el sitio y publica automaticamente.
+3. URL esperada:
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+https://pedro-fernandez-m.github.io/WebFenner/
+
+## Scripts
+
+- `pnpm dev`: desarrollo
+- `pnpm build`: build de produccion (genera export estatico)
+- `pnpm start`: iniciar servidor de produccion (no necesario para Pages)
