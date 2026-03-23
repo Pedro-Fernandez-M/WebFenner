@@ -16,7 +16,7 @@ export function Footer() {
                 className="object-contain"
               />
               <div>
-                <h3 className="text-lg font-bold">Liceo Bicentenario Industrial...</h3>
+                <h3 className="text-lg font-bold">Liceo Bicentenario Industrial Felipe Estuvo aqui...</h3>
                 <p className="text-sm text-neutral-300">Ingeniero Ricardo Fenner Ruedi</p>
                 <p className="text-xs text-neutral-400">Red SNA EDUCA • La Unión</p>
               </div>
