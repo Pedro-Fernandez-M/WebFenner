@@ -72,9 +72,9 @@ export default function NosotrosPage() {
                 </div>
                 <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
                   <img
-                    src="/placeholder.svg?height=500&width=600"
-                    alt="Edificio del Liceo Industrial"
-                    className="w-full h-full object-cover"
+                  src="/liceo-aire.jpg"
+                  alt="Edificio del Liceo Industrial"
+                  className="w-full h-full object-cover"
                   />
                 </div>
               </div>
@@ -121,7 +121,7 @@ export default function NosotrosPage() {
             <Card className="p-8 bg-gradient-to-br from-[var(--color-highlight-dark)] to-[var(--color-highlight)] text-white border-none hover:scale-105 transition-transform duration-300">
               <Lightbulb className="w-12 h-12 mb-4" />
               <h3 className="text-2xl font-bold mb-4">Lema</h3>
-              <p className="leading-relaxed text-xl font-semibold">"Forjando el futuro con técnica y valores"</p>
+              <p className="leading-relaxed text-xl font-semibold">"Más y mejores oportunidades para la vida"</p>
             </Card>
           </div>
         </div>

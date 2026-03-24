@@ -64,12 +64,17 @@ export function AboutSection() {
                   significativamente al desarrollo industrial de Chile.
                 </p>
               </div>
-              <div className="relative h-80 rounded-2xl overflow-hidden">
-                <img
-                  src="/placeholder.svg?height=400&width=600"
-                  alt="Edificio del Liceo Industrial"
+              <div className="relative h-80 rounded-2xl overflow-hidden bg-[var(--color-neutral-200)]">
+                <video
                   className="w-full h-full object-cover"
-                />
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                >
+                  <source src="/Videos/IMG_5931.mp4" type="video/mp4" />
+                  Tu navegador no soporta video HTML5.
+                </video>
               </div>
             </div>
           </Card>
@@ -110,7 +115,7 @@ export function AboutSection() {
           <Card className="p-8 bg-gradient-to-br from-[var(--color-highlight-dark)] to-[var(--color-highlight)] text-white border-none hover:scale-105 transition-transform duration-300">
             <Lightbulb className="w-12 h-12 mb-4" />
             <h3 className="text-2xl font-bold mb-4">Lema</h3>
-            <p className="leading-relaxed text-xl font-semibold">"Forjando el futuro con técnica y valores"</p>
+            <p className="leading-relaxed text-xl font-semibold">"Más y mejores oportunidades para la vida"</p>
           </Card>
         </div>
       </div>

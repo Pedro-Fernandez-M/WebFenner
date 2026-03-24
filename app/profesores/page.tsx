@@ -15,29 +15,40 @@ export default function ProfesoresPage() {
   const equipoDirectivo = [
     {
       nombre: "Director(a)",
-      cargo: "Director del Liceo",
+      cargo: "Enresto Uslar Goverts",
       email: "director@liceofenner.cl",
-      imagen: "/placeholder.svg?height=300&width=300",
+      imagen: "/images/funcionarios/Ernesto%20Uslar.jpeg",
+      imagePosition: "object-[center_20%]",
       destacado: true,
     },
     {
       nombre: "Encargado(a) de Convivencia Escolar",
-      cargo: "Convivencia Escolar",
+      cargo: "Ramón Aguilera",
       email: "convivencia@liceofenner.cl",
-      imagen: "/placeholder.svg?height=300&width=300",
+      imagen: "/images/funcionarios/Ramon%20Aguilera.jpeg",
+      imagePosition: "object-[center_20%]",
     },
     {
       nombre: "Jefa UTP",
-      cargo: "Unidad Técnico Pedagógica",
+      cargo: "Miroslava Montesinos",
       email: "utp@liceofenner.cl",
-      imagen: "/placeholder.svg?height=300&width=300",
+      imagen: "/images/funcionarios/Miroslava%20Montecinos.jpeg",
+      imagePosition: "object-[center_20%]",
     },
     {
       nombre: "Coordinador(a) de Especialidades",
-      cargo: "Coordinación Técnica",
+      cargo: "Juan Diego Garcia",
       email: "coordinador@liceofenner.cl",
-      imagen: "/placeholder.svg?height=300&width=300",
+      imagen: "/images/funcionarios/Juan%20Diego.jpeg",
+      imagePosition: "object-[center_20%]",
     },
+    {
+      nombre: "Jefe Administrativo",
+      cargo: "Jaime Navarrete",
+      email: "ilu.administracion@snaeduca.cl",
+      imagen: "/images/funcionarios/Jaime%20Navarrete.jpeg",
+      imagePosition: "object-[center_20%]",
+    }
   ]
 
   // Área Administrativa y Finanzas
@@ -119,26 +130,30 @@ export default function ProfesoresPage() {
   }))
 
   // Componente reutilizable para tarjetas de personal
-  const PersonCard = ({ persona }: { persona: any }) => (
+  const PersonCard = ({ persona, compact = false }: { persona: any; compact?: boolean }) => (
     <div
-      className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group ${
+      className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group h-full flex flex-col ${
         persona.destacado ? "ring-2 ring-[var(--color-primary)]" : ""
       }`}
     >
-      <div className="relative h-64 bg-[var(--color-neutral-200)] overflow-hidden">
+      <div className={`relative ${compact ? "h-44" : "h-64"} bg-[var(--color-neutral-200)] overflow-hidden`}>
         <Image
           src={persona.imagen || "/placeholder.svg"}
           alt={persona.nombre}
           fill
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
+          className={`object-cover ${persona.imagePosition || "object-center"} group-hover:scale-105 transition-transform duration-300`}
         />
       </div>
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-[var(--color-neutral-900)] mb-2">{persona.nombre}</h3>
-        <p className="text-[var(--color-primary)] font-semibold mb-4">{persona.cargo}</p>
+      <div className="p-6 flex-1 flex flex-col">
+        <h3 className={`font-bold text-[var(--color-neutral-900)] mb-2 leading-snug ${compact ? "text-lg min-h-[3.5rem]" : "text-xl"}`}>
+          {persona.nombre}
+        </h3>
+        <p className={`text-[var(--color-primary)] font-semibold mb-4 ${compact ? "min-h-[3rem]" : ""}`}>
+          {persona.cargo}
+        </p>
         <a
           href={`mailto:${persona.email}`}
-          className="flex items-center gap-2 text-sm text-[var(--color-neutral-700)] hover:text-[var(--color-primary)] transition-colors"
+          className="mt-auto flex items-center gap-2 text-sm text-[var(--color-neutral-700)] hover:text-[var(--color-primary)] transition-colors break-all"
         >
           <Mail className="w-4 h-4" />
           {persona.email}
@@ -148,22 +163,52 @@ export default function ProfesoresPage() {
   )
 
   // Componente para secciones
-  const Section = ({ title, icon: Icon, personas, color }: any) => (
-    <div className="mb-16">
-      <div className="flex items-center gap-3 mb-8">
-        <Icon className={`w-8 h-8 ${color}`} />
-        <h2 className="text-3xl font-bold text-[var(--color-neutral-900)]">{title}</h2>
-        <span className="ml-auto text-lg font-semibold text-[var(--color-neutral-600)]">
-          {personas.length} {personas.length === 1 ? "persona" : "personas"}
-        </span>
+  const Section = ({
+    title,
+    icon: Icon,
+    personas,
+    color,
+    gridClass = "grid-cols-1 md:grid-cols-2 lg:grid-cols-4",
+    compactCards = false,
+    featuredFirst = false,
+  }: any) => {
+    const personaDestacada = featuredFirst ? personas[0] : null
+    const personasSecundarias = featuredFirst ? personas.slice(1) : personas
+
+    return (
+      <div className="mb-16">
+        <div className="flex items-center gap-3 mb-8">
+          <Icon className={`w-8 h-8 ${color}`} />
+          <h2 className="text-3xl font-bold text-[var(--color-neutral-900)]">{title}</h2>
+          <span className="ml-auto text-lg font-semibold text-[var(--color-neutral-600)]">
+            {personas.length} {personas.length === 1 ? "persona" : "personas"}
+          </span>
+        </div>
+
+        {personaDestacada && (
+          <div className="mb-6 flex justify-center">
+            <div className="w-full sm:max-w-[18rem]">
+              <PersonCard persona={personaDestacada} compact={compactCards} />
+            </div>
+          </div>
+        )}
+
+        <div
+          className={`grid ${featuredFirst ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" : gridClass} gap-6 items-stretch`}
+        >
+          {personasSecundarias.map((persona: any, index: number) => (
+            featuredFirst ? (
+              <div key={index} className="w-full sm:max-w-[18rem] mx-auto">
+                <PersonCard persona={persona} compact={compactCards} />
+              </div>
+            ) : (
+              <PersonCard key={index} persona={persona} compact={compactCards} />
+            )
+          ))}
+        </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {personas.map((persona: any, index: number) => (
-          <PersonCard key={index} persona={persona} />
-        ))}
-      </div>
-    </div>
-  )
+    )
+  }
 
   return (
     <div className="min-h-screen bg-[var(--color-background)]">
@@ -191,6 +236,8 @@ export default function ProfesoresPage() {
             icon={Building2}
             personas={equipoDirectivo}
             color="text-[var(--color-primary)]"
+            featuredFirst
+            compactCards
           />
 
           <Section

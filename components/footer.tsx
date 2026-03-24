@@ -102,7 +102,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-5 h-5 flex-shrink-0" />
-                <span>contacto@liceofenner.cl</span>
+                <span>contacto@industrialfenner.cl</span>
               </li>
             </ul>
           </div>

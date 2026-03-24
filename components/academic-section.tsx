@@ -33,6 +33,9 @@ export function AcademicSection() {
       title: "Electricidad",
       description: "Formación en instalaciones eléctricas, automatización y sistemas de control industrial.",
       color: "from-yellow-500 to-amber-500",
+      surface: "from-yellow-100 via-amber-50 to-yellow-50",
+      accent: "bg-yellow-500",
+      tag: "Energía y control",
       slug: "electricidad",
     },
     {
@@ -40,6 +43,9 @@ export function AcademicSection() {
       title: "Construcción Mención Edificación",
       description: "Técnicas de construcción, lectura de planos, cálculo estructural y gestión de obras.",
       color: "from-orange-500 to-red-500",
+      surface: "from-orange-100 via-orange-50 to-red-50",
+      accent: "bg-orange-500",
+      tag: "Obras y planos",
       slug: "construccion",
     },
     {
@@ -47,6 +53,9 @@ export function AcademicSection() {
       title: "Instalaciones Sanitarias",
       description: "Sistemas de agua potable, alcantarillado, gas y climatización en edificaciones.",
       color: "from-blue-500 to-cyan-500",
+      surface: "from-sky-100 via-cyan-50 to-blue-50",
+      accent: "bg-blue-500",
+      tag: "Redes técnicas",
       slug: "instalaciones-sanitarias",
     },
     {
@@ -54,6 +63,9 @@ export function AcademicSection() {
       title: "Mecánica Automotriz",
       description: "Diagnóstico, mantención y reparación de sistemas mecánicos y electrónicos vehiculares.",
       color: "from-gray-600 to-gray-800",
+      surface: "from-zinc-200 via-slate-100 to-zinc-50",
+      accent: "bg-slate-700",
+      tag: "Motores y diagnóstico",
       slug: "mecanica-automotriz",
     },
     {
@@ -61,6 +73,9 @@ export function AcademicSection() {
       title: "Estructuras Metálicas",
       description: "Diseño, fabricación y montaje de estructuras metálicas para la construcción e industria.",
       color: "from-slate-500 to-zinc-600",
+      surface: "from-slate-200 via-slate-50 to-zinc-100",
+      accent: "bg-slate-500",
+      tag: "Fabricación industrial",
       slug: "estructuras-metalicas",
     },
   ]
@@ -83,24 +98,40 @@ export function AcademicSection() {
         </div>
 
         <div
-          className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 transition-all duration-1000 delay-200 ${
+          className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5 mb-20 transition-all duration-1000 delay-200 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
           {specialties.map((specialty, index) => {
             const Icon = specialty.icon
             return (
-              <Link key={index} href={`/especialidades/${specialty.slug}`}>
-                <Card className="p-8 bg-white border-none shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer h-full">
-                  <div
-                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${specialty.color} flex items-center justify-center mb-6`}
-                  >
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-[var(--color-primary)] mb-4">{specialty.title}</h3>
-                  <p className="text-[var(--color-neutral-700)] leading-relaxed mb-4">{specialty.description}</p>
-                  <div className="flex items-center text-[var(--color-primary)] font-semibold">
-                    Ver más <ArrowRight className="ml-2 w-4 h-4" />
+              <Link key={index} href={`/especialidades/${specialty.slug}`} className="group h-full">
+                <Card
+                  className={`relative h-full overflow-hidden border border-white/70 bg-gradient-to-b ${specialty.surface} p-0 shadow-lg shadow-slate-200/70 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-slate-300/60 cursor-pointer`}
+                >
+                  <div className={`h-1.5 w-full ${specialty.accent}`} />
+                  <div className="flex h-full flex-col p-6">
+                    <div className="mb-5 flex items-start justify-between gap-3">
+                      <span className="rounded-full border border-black/5 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-neutral-700)]">
+                        {specialty.tag}
+                      </span>
+                      <span className="text-sm font-semibold text-[var(--color-neutral-700)]">0{index + 1}</span>
+                    </div>
+                    <div
+                      className={`mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${specialty.color} shadow-lg transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3`}
+                    >
+                      <Icon className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="mb-4 text-2xl leading-tight font-bold text-[var(--color-primary)] xl:text-[1.65rem]">
+                      {specialty.title}
+                    </h3>
+                    <p className="mb-6 flex-1 text-[var(--color-neutral-700)] leading-relaxed text-sm xl:text-base">
+                      {specialty.description}
+                    </p>
+                    <div className="flex items-center justify-between border-t border-black/5 pt-4 text-[var(--color-primary)] font-semibold">
+                      <span>Ver especialidad</span>
+                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </div>
                   </div>
                 </Card>
               </Link>
