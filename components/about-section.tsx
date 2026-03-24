@@ -72,7 +72,7 @@ export function AboutSection() {
                   loop
                   playsInline
                 >
-                  <source src="/Videos/IMG_5931.mp4" type="video/mp4" />
+                  <source src="/Videos/IMG_5931.webm" type="video/webm" />
                   Tu navegador no soporta video HTML5.
                 </video>
               </div>
