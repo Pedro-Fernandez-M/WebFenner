@@ -86,13 +86,25 @@ export function NewsSection() {
                 </div>
                 <h3 className="text-xl font-bold text-[var(--color-primary)] mb-3 text-balance">{item.title}</h3>
                 <p className="text-[var(--color-neutral-700)] leading-relaxed mb-4">{item.excerpt}</p>
-                <Button
-                  variant="ghost"
-                  className="text-[var(--color-accent)] hover:text-[var(--color-accent-light)] p-0 h-auto font-semibold"
-                >
-                  Leer más
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                {item.sourceUrl ? (
+                  <a href={item.sourceUrl} target="_blank" rel="noopener noreferrer">
+                    <Button
+                      variant="ghost"
+                      className="text-[var(--color-accent)] hover:text-[var(--color-accent-light)] p-0 h-auto font-semibold"
+                    >
+                      Ver publicación
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </a>
+                ) : (
+                  <Button
+                    variant="ghost"
+                    className="text-[var(--color-accent)] hover:text-[var(--color-accent-light)] p-0 h-auto font-semibold"
+                  >
+                    Leer más
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                )}
               </div>
             </Card>
           ))}

@@ -5,6 +5,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+    "fetch:facebook-news": "node scripts/fetch-facebook-news.mjs",
     "lint": "eslint .",
     "start": "next start"
   },

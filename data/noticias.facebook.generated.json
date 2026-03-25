@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "title": "Noticias disponibles en Facebook",
+    "date": "Actualizado automáticamente",
+    "category": "Facebook",
+    "image": "/placeholder.svg?height=400&width=600",
+    "excerpt": "Configura FACEBOOK_PAGE_ID y FACEBOOK_PAGE_ACCESS_TOKEN para sincronizar publicaciones reales.",
+    "content": "Configura FACEBOOK_PAGE_ID y FACEBOOK_PAGE_ACCESS_TOKEN para sincronizar publicaciones reales.",
+    "sourceUrl": "https://www.facebook.com/indufenner"
+  }
+]
