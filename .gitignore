@@ -25,7 +25,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# local media too large for GitHub push limit
-public/Videos/*.mp4
-public/Videos/*.webm

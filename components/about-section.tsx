@@ -74,10 +74,14 @@ export function AboutSection() {
                   playsInline
                   controls
                   preload="metadata"
+                  poster={withBasePath("/logo-liceo.png")}
                 >
+                  <source src={withBasePath("/Videos/IMG_5931.mp4")} type="video/mp4" />
                   <source src={withBasePath("/Videos/IMG_5931.webm")} type="video/webm" />
                   Tu navegador no puede reproducir este video.
-                  <a href={withBasePath("/Videos/IMG_5931.webm")}>Descargar video</a>
+                  <a href={withBasePath("/Videos/IMG_5931.mp4")}>Descargar MP4</a>
+                  {" | "}
+                  <a href={withBasePath("/Videos/IMG_5931.webm")}>Descargar WEBM</a>
                 </video>
               </div>
             </div>
