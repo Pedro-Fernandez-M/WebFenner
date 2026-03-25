@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer"
 import { Card } from "@/components/ui/card"
 import { Target, Eye, Heart, Lightbulb, Quote } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
+import { withBasePath } from "@/lib/asset-path"
 
 export default function NosotrosPage() {
   const [isVisible, setIsVisible] = useState(false)
@@ -72,7 +73,7 @@ export default function NosotrosPage() {
                 </div>
                 <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
                   <img
-                  src="/liceo-aire.jpg"
+                  src={withBasePath("/liceo-aire.jpg")}
                   alt="Edificio del Liceo Industrial"
                   className="w-full h-full object-cover"
                   />
@@ -143,7 +144,7 @@ export default function NosotrosPage() {
                 <div className="flex-shrink-0">
                   <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-lg border-4 border-[var(--color-primary)]">
                     <img
-                      src="/placeholder.svg?height=200&width=200"
+                      src={withBasePath("/placeholder.svg?height=200&width=200")}
                       alt="Director del Liceo"
                       className="w-full h-full object-cover"
                     />

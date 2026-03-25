@@ -7,6 +7,7 @@ import { Calendar, ArrowRight } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { getLatestNoticias } from "@/data/noticias"
+import { withBasePath } from "@/lib/asset-path"
 
 export function NewsSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -70,7 +71,7 @@ export function NewsSection() {
             >
               <div className="relative h-48 overflow-hidden">
                 <img
-                  src={item.image || "/placeholder.svg"}
+                  src={withBasePath(item.image || "/placeholder.svg")}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />

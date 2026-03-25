@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Calendar, ArrowRight, Newspaper } from "lucide-react"
 import { getAllNoticias } from "@/data/noticias"
+import { withBasePath } from "@/lib/asset-path"
 
 export default function NoticiasPage() {
   useEffect(() => {
@@ -53,7 +54,7 @@ export default function NoticiasPage() {
               >
                 <div className="relative h-48 overflow-hidden">
                   <img
-                    src={item.image || "/placeholder.svg"}
+                    src={withBasePath(item.image || "/placeholder.svg")}
                     alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />

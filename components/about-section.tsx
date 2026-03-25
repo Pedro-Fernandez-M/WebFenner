@@ -3,6 +3,7 @@
 import { Card } from "@/components/ui/card"
 import { Target, Eye, Heart, Lightbulb } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
+import { withBasePath } from "@/lib/asset-path"
 
 export function AboutSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -72,7 +73,7 @@ export function AboutSection() {
                   loop
                   playsInline
                 >
-                  <source src="/Videos/IMG_5931.webm" type="video/webm" />
+                  <source src={withBasePath("/Videos/IMG_5931.webm")} type="video/webm" />
                   Tu navegador no soporta video HTML5.
                 </video>
               </div>
