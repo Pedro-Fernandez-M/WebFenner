@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { withBasePath } from "@/lib/asset-path"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -42,10 +43,16 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-3">
-            <Image src="/logo-sna-educa.png" alt="Logo SNA EDUCA" width={45} height={45} className="object-contain" />
+            <Image
+              src={withBasePath("/logo-sna-educa.png")}
+              alt="Logo SNA EDUCA"
+              width={45}
+              height={45}
+              className="object-contain"
+            />
             <div className="w-px h-10 bg-[var(--color-neutral-300)]" />
             <Image
-              src="/logo-liceo.png"
+              src={withBasePath("/logo-liceo.png")}
               alt="Logo Liceo Bicentenario Industrial Ingeniero Ricardo Fenner Ruedi"
               width={45}
               height={45}

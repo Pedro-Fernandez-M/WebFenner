@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
+import { withBasePath } from "@/lib/asset-path"
 
 export function ContactSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -150,7 +151,7 @@ export function ContactSection() {
                     {/* Logo Centro de Innovación */}
                     <div className="mt-4 pt-4 border-t border-[var(--color-neutral-200)]">
                       <Image
-                        src="/logo-centro-innovacion.png"
+                        src={withBasePath("/logo-centro-innovacion.png")}
                         alt="Centro de Innovación"
                         width={180}
                         height={60}

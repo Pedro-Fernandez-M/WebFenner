@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react"
 import Image from "next/image"
+import { withBasePath } from "@/lib/asset-path"
 
 export function Footer() {
   return (
@@ -9,7 +10,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <Image
-                src="/logo-liceo.png"
+                src={withBasePath("/logo-liceo.png")}
                 alt="Logo Liceo Bicentenario Industrial Ingeniero Ricardo Fenner Ruedi"
                 width={60}
                 height={60}

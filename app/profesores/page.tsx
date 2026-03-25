@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer"
 import { Users, Mail, Building2, GraduationCap, Shield, Briefcase, Heart, ShoppingCart, Wrench } from "lucide-react"
 import Image from "next/image"
 import { useEffect } from "react"
+import { withBasePath } from "@/lib/asset-path"
 
 export default function ProfesoresPage() {
   useEffect(() => {
@@ -138,7 +139,7 @@ export default function ProfesoresPage() {
     >
       <div className={`relative ${compact ? "h-44" : "h-64"} bg-[var(--color-neutral-200)] overflow-hidden`}>
         <Image
-          src={persona.imagen || "/placeholder.svg"}
+          src={withBasePath(persona.imagen || "/placeholder.svg")}
           alt={persona.nombre}
           fill
           className={`object-cover ${persona.imagePosition || "object-center"} group-hover:scale-105 transition-transform duration-300`}

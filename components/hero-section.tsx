@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Wrench, Cog, Zap, Clock, Mail, Phone } from "lucide-react"
 import { useEffect, useState } from "react"
 import Image from "next/image"
+import { withBasePath } from "@/lib/asset-path"
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -44,7 +45,7 @@ export function HeroSection() {
             }`}
           >
             <Image
-              src="/logo-liceo.png"
+              src={withBasePath("/logo-liceo.png")}
               alt="Logo Liceo Bicentenario Industrial Ingeniero Ricardo Fenner Ruedi"
               width={180}
               height={180}
