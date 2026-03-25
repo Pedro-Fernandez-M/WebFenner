@@ -72,9 +72,12 @@ export function AboutSection() {
                   muted
                   loop
                   playsInline
+                  controls
+                  preload="metadata"
                 >
                   <source src={withBasePath("/Videos/IMG_5931.webm")} type="video/webm" />
-                  Tu navegador no soporta video HTML5.
+                  Tu navegador no puede reproducir este video.
+                  <a href={withBasePath("/Videos/IMG_5931.webm")}>Descargar video</a>
                 </video>
               </div>
             </div>
